@@ -1,0 +1,37 @@
+body,html{
+    height:100%;
+    margin: 0px;
+    
+}
+.bg{
+  /* The image used */
+    background-image: url("nyc-2.jpg");
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.name{
+/*    font-family: 'Roboto Slab', serif;*/
+/*    font-family: 'VT323', monospace;*/
+    font-family: 'Permanent Marker', cursive;
+    font-size: 5em;
+    color: #ff5e57;
+    padding-top:.1em;
+    text-align: left;
+    margin:0;
+    padding-left: 15px;
+}
+#lastname{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 5em;
+    color: #ff5e57;
+    text-align: left;
+    margin:0;
+    padding-left: 15px;
+
+}
