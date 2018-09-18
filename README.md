@@ -1,2 +1,2 @@
 # david-lietjauw.com
-personal website (under construction)
+Welcome to my personal website!!!
