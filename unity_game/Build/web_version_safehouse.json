@@ -1,9 +1,9 @@
 {
 "companyName": "DefaultCompany",
 "productName": "semester_project",
-"dataUrl": "web_version4.0.data.unityweb",
-"wasmCodeUrl": "web_version4.0.wasm.code.unityweb",
-"wasmFrameworkUrl": "web_version4.0.wasm.framework.unityweb",
+"dataUrl": "web_version_safehouse.data.unityweb",
+"wasmCodeUrl": "web_version_safehouse.wasm.code.unityweb",
+"wasmFrameworkUrl": "web_version_safehouse.wasm.framework.unityweb",
 "TOTAL_MEMORY": 268435456,
 "graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
 "webglContextAttributes": {"preserveDrawingBuffer": false},
