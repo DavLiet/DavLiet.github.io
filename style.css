@@ -63,6 +63,11 @@ p{
     font-weight: bold;
 }
 
+#dataviz{
+    color:#e74c3c;
+    font-weight: bold;
+}
+
 #name{
     font-family:"Permanent Marker",sans-serif;
     color:#636e72;

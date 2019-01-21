@@ -1,0 +1,23 @@
+body{
+    background-color:#dfe4ea;
+}
+
+h1, p{
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    color: #666;
+}
+
+p{
+    font-size: 24px;
+}
+
+#content{
+    margin-bottom: 100px;
+}
+
+a{
+    color:#3867d6;
+}
+a:hover{
+    color: #fc5c65;
+}
