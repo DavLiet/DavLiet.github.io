@@ -1,0 +1,44 @@
+body{
+    background-color:#f9f9f9;
+}
+.unitlabel,.wordLabel{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:10px;
+
+
+}
+
+/** Style Buttons **/
+.story{
+    padding: 8px 4px;
+    margin: 4px;
+    border-radius: 2px;
+    background-color:#dfe6e9;
+}
+
+.selected{
+    background-color:#e67e22;
+    color: #f9f9f9;
+    border-color:#74b9ff;
+}
+
+.polygon{
+    fill-opacity: .3
+}
+
+#first{
+    padding-top:200px;
+    margin-top:200px;
+    top:100px;
+
+}
+
+#chart-one{
+    text-align: center;
+
+}
+
+.titleLabel{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:15px;
+}
