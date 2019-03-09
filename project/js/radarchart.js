@@ -35,11 +35,15 @@ RadarChart.prototype.init = function () {
 
     // create color scale
 
+
     // citatioin: https://bl.ocks.org/pstuffa/d5934843ee3a7d2cc8406de64e6e4ea5
     var colorScale = d3.scaleSequential(d3.interpolateInferno)
-        .domain([0, self.svgWidth])
+        .domain([self.svgWidth, 0])
 
-    self.svg.selectAll(".colorBars")
+    var scaleGroup = self.svg.append("g").attr("class", "colorGroup")
+    scaleGroup.append("text").text("Most Easy").attr("transform", "translate(0,-60)")
+    scaleGroup.append("text").text("Most Difficult").attr("transform", "translate(0,-60)").attr("x", self.svgWidth - 90)
+    scaleGroup.selectAll(".colorBars")
         .data(d3.range(self.svgWidth), function (d) { return d; })
         .enter().append("rect")
         .attr("class", "colorBars")
