@@ -1,11 +1,28 @@
-body{
-    background-color:#f9f9f9;
-}
-.unitlabel,.wordLabel{
+
+.unitlabel,.wordLabel,.complexLabel{
     font-family: Arial, Helvetica, sans-serif;
     font-size:10px;
+}
 
+h1,h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:20px;
+}
 
+#intro>p,#intro>li,#intro>ol,#intro>h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color:#f9f9f9;
+}
+
+#intro{
+    background-color: #57606f;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 18px;
+
+}
+
+body{
+    background-color:#f9f9f9;
 }
 
 /** Style Buttons **/
@@ -41,4 +58,29 @@ body{
 .titleLabel{
     font-family: Arial, Helvetica, sans-serif;
     font-size:15px;
+}
+
+.d3-tip{
+    padding-left: 10px;
+    padding-right: 10px;
+    min-width: 100px;
+    border-style: groove;
+    /*padding: 12px;*/
+    background: #FFFFFF;
+    color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.tooltip-title{
+    color:blue;
+}
+
+.metadata{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#intro{
+    margin: auto 0;
 }
