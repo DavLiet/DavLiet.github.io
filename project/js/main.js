@@ -1,5 +1,6 @@
 /*
  * Root file that handles instances of all the charts and loads the visualization
+ * CITATION: This main.js file was taken and modified from the Electoral Charts Assignment
  */
 (function () {
     var instance = null;
@@ -9,19 +10,8 @@
      * the classes are defined in the respective javascript files.
      */
     function init() {
-        //Creating instances for each visualization
-        // var parallelPoints = new ParallelPoints();
         var radarChart = new RadarChart();
         var stories = new Stories(radarChart);
-        console.log("CALLED")
-
-        //load the data corresponding to all the election years
-        //pass this data and instances of all the charts that update on year selection to yearChart's constructor
-        // d3.csv("data/yearwise-winner.csv", function (error, electionWinners) {
-        //     //pass the instances of all the charts that update on selection change in YearChart
-        //     var yearChart = new YearChart(electoralVoteChart, tileChart, votePercentageChart, electionWinners);
-        //     yearChart.update();
-        // });
     }
 
     /**

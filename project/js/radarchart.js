@@ -181,7 +181,6 @@ RadarChart.prototype.init = function () {
 
 
     // add sentence count axis
-    // var sentenceLabels = ["12", "24", "36", "48", "60", "72", "84", "96", "108", "120"]
     var sentenceLabels = ["15", "30", "45", "60", "75", "90", "105", "120", "135", "150"]
 
     self.svg.selectAll(".sentenceLabel").data(sentenceLabels).enter().append("text").attr("x", function (d, i) {
@@ -240,8 +239,6 @@ RadarChart.prototype.init = function () {
 
 
     d3.json('data/data.json', function (error, data) {
-        var metrics = ["total_words", "total_sentences", "total_syllables", "common_words"];
-
         self.data = data;
         var totalWords = []
         var totalSentences = []
@@ -256,9 +253,6 @@ RadarChart.prototype.init = function () {
             self.readabilityScore.push(d.flesch_score)
         });
 
-        // Create an axis scale. Each "tick" on the X-Axis should represent a y-axis (total words, total sentences, total syllables, % of common words)
-        var xScale = d3.scaleLinear().domain([0, 3]).range([0, self.svgWidth - 100]);
-
         var totalWordScale = d3.scaleLinear().domain([4000, 0]).range([10, 0]);
         var sentencesScale = d3.scaleLinear().domain([151, 0]).range([10, 0]);
         var syllableScale = d3.scaleLinear().domain([5000, 0]).range([10, 0]);
@@ -272,9 +266,7 @@ RadarChart.prototype.init = function () {
         //Define line generator
         self.lineGenerator = d3.line()
             .x(function (d, i) {
-                console.log("X HIT")
                 if (d.index == 0) {    // total words is top vertice
-                    console.log(`X: ${(self.svgWidth / 2)}`)
                     return (self.svgWidth / 2);
                 }
                 else if (d.index == 1) {
@@ -282,57 +274,36 @@ RadarChart.prototype.init = function () {
                     var offset = sentencesScale(d.sentence_count) - level;
                     switch (level) {
                         case 0:
-                            console.log(`X: ${(self.svgWidth / 2 + xOffSetScale(offset))}`)
                             return self.svgWidth / 2 + xOffSetScale(offset);
                             break;
                         case 1:
-                            console.log(`X: ${one[1].x + xOffSetScale(offset)}`)
-
                             return one[1].x + xOffSetScale(offset);
                             break;
                         case 2:
-                            console.log(`X: ${two[1].x + xOffSetScale(offset)}`)
-
                             return two[1].x + xOffSetScale(offset);
                             break;
                         case 3:
-                            console.log(`X: ${three[1].x + xOffSetScale(offset)}`)
-
                             return three[1].x + xOffSetScale(offset);
                             break;
                         case 4:
-                            console.log(`X: ${four[1].x + xOffSetScale(offset)}`)
-
                             return four[1].x + xOffSetScale(offset);
                             break;
                         case 5:
-                            console.log(`X: ${five[1].x + xOffSetScale(offset)}`)
-
                             return five[1].x + xOffSetScale(offset);
                             break;
                         case 6:
-                            console.log(`X: ${six[1].x + xOffSetScale(offset)}`)
-
                             return six[1].x + xOffSetScale(offset);
                             break;
                         case 7:
-                            console.log(`X: ${seven[1].x + xOffSetScale(offset)}`)
-
                             return seven[1].x + xOffSetScale(offset);
                             break;
                         case 8:
-                            console.log(`X: ${eight[1].x + xOffSetScale(offset)}`)
-
                             return eight[1].x + xOffSetScale(offset);
                             break;
                         case 9:
-                            console.log(`X: ${nine[1].x + xOffSetScale(offset)}`)
-
                             return nine[1].x + xOffSetScale(offset);
                             break;
                         case 10:
-                            console.log(`X: ${ten[1].x + xOffSetScale(offset)}`)
-
                             return ten[1].x + xOffSetScale(offset);
                             break;
                     }
@@ -343,77 +314,40 @@ RadarChart.prototype.init = function () {
                     return self.svgWidth / 2
                 }
                 else {
-
-                    // var level = parseInt(commonScale(d.complex_words));
-                    // var offset = commonScale(d.complex_words) - level;
-
                     var lastLevel = parseInt(complexScale(d.complex_words));
                     var offset = complexScale(d.complex_words) - lastLevel;
-
-                    // console.log("LEVEL")
-                    // console.log(lastLevel)
-                    // console.log(d.complex_words)
-                    // console.log(complexScale(d.complex_words))
-                    // console.log(offset)
-                    // console.log(parseInt(complexScale(d.complex_words)))
-                    // console.log(lastLevel)
-                    // console.log(offset)
-                    // console.log(nine[3].x - yOffSetScale(offset))
-                    // self.svg.append("circle").attr("cx", nine[3].x - yOffSetScale(offset)).attr("cy", self.svgHeight / 2).attr("r", "5")
                     switch (lastLevel) {
                         case 0:
-                            console.log(`X: ${self.svgWidth / 2 - yOffSetScale(offset)}`)
-
                             return self.svgWidth / 2 - yOffSetScale(offset);
                             break;
                         case 1:
-                            console.log(`X: ${one[3].x - yOffSetScale(offset)}`)
                             return one[3].x - yOffSetScale(offset);
                             break;
                         case 2:
-                            console.log(`X: ${two[3].x - yOffSetScale(offset)}`)
-
                             return two[3].x - yOffSetScale(offset);
                             break;
                         case 3:
-                            console.log(`X: ${three[3].x - yOffSetScale(offset)}`)
-
                             return three[3].x - yOffSetScale(offset);
                             break;
                         case 4:
-                            console.log(`X: ${four[3].x - yOffSetScale(offset)}`)
-
                             return four[3].x - yOffSetScale(offset);
                             break;
                         case 5:
-                            console.log(`X: ${five[3].x - yOffSetScale(offset)}`)
-
                             return five[3].x - yOffSetScale(offset);
                             break;
                         case 6:
-                            console.log(`X: ${six[3].x - yOffSetScale(offset)}`)
-
                             return six[3].x - yOffSetScale(offset);
                             break;
                         case 7:
-                            console.log(`X: ${seven[3].x - yOffSetScale(offset)}`)
-
                             return seven[3].x - yOffSetScale(offset);
                             break;
                         case 8:
-                            console.log(`X: ${eight[3].x - yOffSetScale(offset)}`)
-
                             return eight[3].x - yOffSetScale(offset);
                             break;
                         case 9:
-                            console.log(`X: ${nine[3].x - yOffSetScale(offset)}`)
-
-                            console.log(`X: ${nine[3].x - yOffSetScale(offset)}`)
                             return nine[3].x - yOffSetScale(offset);
                             break;
                         case 10:
-                            console.log(`X: ${ten[3].x - yOffSetScale(offset)}`)
-
                             return ten[3].x - yOffSetScale(offset);
                             break;
                     }
@@ -421,67 +355,46 @@ RadarChart.prototype.init = function () {
                 }
             })
             .y(function (d, i) {
-                console.log("Y HIT")
-
                 if (d.index == 0) {
                     var level = parseInt(totalWordScale(d.total_words));
                     var offset = totalWordScale(d.total_words) - level;
                     switch (level) {
                         case 0:
-                            console.log(`Y: ${self.svgHeight / 2 - yOffSetScale(offset)}`)
                             return self.svgHeight / 2 - yOffSetScale(offset);
                             break;
                         case 1:
-                            console.log(`1Y: ${one[0].y - yOffSetScale(offset)}`)
                             return one[0].y - yOffSetScale(offset);
                             break;
                         case 2:
-                            console.log(`2Y: ${two[0].y - yOffSetScale(offset)}`)
                             return two[0].y - yOffSetScale(offset);
                             break;
                         case 3:
-                            console.log(`3Y: ${three[0].y - yOffSetScale(offset)}`)
                             return three[0].y - yOffSetScale(offset);
                             break;
                         case 4:
-                            console.log(`4Y: ${four[0].y - yOffSetScale(offset)}`)
                             return four[0].y - yOffSetScale(offset);
                             break;
                         case 5:
-                            console.log(`5Y: ${five[0].y - yOffSetScale(offset)}`)
                             return five[0].y - yOffSetScale(offset);
                             break;
                         case 6:
-                            console.log(`6Y: ${six[0].y - yOffSetScale(offset)}`)
                             return six[0].y - yOffSetScale(offset);
                             break;
                         case 7:
-                            console.log(`7Y: ${seven[0].y - yOffSetScale(offset)}`)
                             return seven[0].y - yOffSetScale(offset);
                             break;
                         case 8:
-                            console.log(`8Y: ${eight[0].y - yOffSetScale(offset)}`)
                             return eight[0].y - yOffSetScale(offset);
                             break;
                         case 9:
-                            console.log(`9Y: ${nine[0].y - yOffSetScale(offset)}`)
-                            console.log(level)
-                            console.log(offset)
-                            console.log(nine[0].y - yOffSetScale(offset))
-                            console.log(d.total_words)
-                            // self.svg.append("circle").attr("cx", self.svgWidth / 2).attr("cy", nine[0].y - yOffSetScale(offset)).attr("r", "5")
-
                             return nine[0].y - yOffSetScale(offset);
                             break;
                         case 10:
-                            console.log(`10Y: ${ten[0].y - yOffSetScale(offset)}`)
                             return ten[0].y - yOffSetScale(offset);
                             break;
                     }
                 }
                 else if (d.index == 1) {
-                    console.log(`Y: ${self.svgHeight / 2}`)
-
                     return self.svgHeight / 2;
                 }
                 else if (d.index == 2) {
@@ -489,62 +402,41 @@ RadarChart.prototype.init = function () {
                     var offset = syllableScale(d.total_syllables) - level;
                     switch (level) {
                         case 0:
-                            console.log(`Y: ${self.svgHeight / 2 + yOffSetScale(offset)}`)
-
                             return self.svgHeight / 2 + yOffSetScale(offset);
                             break;
                         case 1:
-                            console.log(`Y: ${one[2].y + yOffSetScale(offset)}`)
                             return one[2].y + yOffSetScale(offset);
                             break;
                         case 2:
-                            console.log(`Y: ${two[2].y + yOffSetScale(offset)}`)
                             return two[2].y + yOffSetScale(offset);
                             break;
                         case 3:
-                            console.log(`Y: ${three[2].y + yOffSetScale(offset)}`)
-
                             return three[2].y + yOffSetScale(offset);
                             break;
                         case 4:
-                            console.log(`Y: ${four[2].y + yOffSetScale(offset)}`)
-
                             return four[2].y + yOffSetScale(offset);
                             break;
                         case 5:
-                            console.log(`Y: ${five[2].y + yOffSetScale(offset)}`)
-
                             return five[2].y + yOffSetScale(offset);
                             break;
                         case 6:
-                            console.log(`Y: ${six[2].y + yOffSetScale(offset)}`)
-
                             return six[2].y + yOffSetScale(offset);
                             break;
                         case 7:
-                            console.log(`Y: ${seven[2].y + yOffSetScale(offset)}`)
-
                             return seven[2].y + yOffSetScale(offset);
                             break;
                         case 8:
-                            console.log(`Y: ${eight[2].y + yOffSetScale(offset)}`)
-
                             return eight[2].y + yOffSetScale(offset);
                             break;
                         case 9:
-                            console.log(`Y: ${nine[2].y + yOffSetScale(offset)}`)
-
                             return nine[2].y + yOffSetScale(offset);
                             break;
                         case 10:
-                            console.log(`Y: ${ten[2].y + yOffSetScale(offset)}`)
-
                             return ten[2].y + yOffSetScale(offset);
                             break;
                     }
                 }
                 else { // i==3
-                    console.log(`Y: ${self.svgHeight / 2}`)
                     return self.svgHeight / 2;
                 }
             });
@@ -568,7 +460,6 @@ RadarChart.prototype.drawGraph = function (story) {
             for (var property in obj) {
                 switch (property) {
                     case "total_words":
-                        console.log(`SENTENCES: ${obj.sentence_count}`)
                         var a = {
                             total_words: obj.total_words,
                             title: obj.title,
@@ -596,7 +487,6 @@ RadarChart.prototype.drawGraph = function (story) {
                         arr.push(a)
                         break;
                     case "complex_words":
-                        // console.log(obj.complex_words)
                         var a = {
                             complex_words: obj.complex_words,
                             title: obj.title,
@@ -626,10 +516,6 @@ RadarChart.prototype.drawGraph = function (story) {
             var lastelem = arr[0];
             arr.push(lastelem)
 
-            console.log(arr)
-
-
-            /* Initialize tooltip */
             self.tip = d3.tip().attr('class', 'd3-tip').html(function (d) {
                 return RadarChart.prototype.tooltip_render(d, self.colorScale);
             }).direction('e').offset(function () {
@@ -651,9 +537,6 @@ RadarChart.prototype.drawGraph = function (story) {
 
             })
 
-            console.log(drawnPath)
-
-
             d3.selectAll(".polygon").call(self.tip)
 
         }
@@ -665,6 +548,7 @@ RadarChart.prototype.update = function (choiceOne) {
     var self = this;
 
 
+
     if ((choiceOne != self.firstVisual) && (choiceOne != self.secondVisual)) {
         d3.selectAll(".polygon").remove()
 
@@ -672,8 +556,17 @@ RadarChart.prototype.update = function (choiceOne) {
         self.secondVisual = choiceOne
 
 
-        self.drawGraph(self.firstVisual)
-        self.drawGraph(self.secondVisual)
+        if (self.firstVisual) {
+            self.drawGraph(self.firstVisual)
+            RadarChart.prototype.summary_render_one(self.firstVisual, self.data);
+
+        }
+        if (self.secondVisual) {
+            self.drawGraph(self.secondVisual)
+            RadarChart.prototype.summary_render_two(self.secondVisual, self.data);
+
+        }
+
     }
 
 }
@@ -700,4 +593,42 @@ RadarChart.prototype.tooltip_render = function (tooltip_data, colorScale) {
     text += "</ul>";
     return text;
 }
+
+RadarChart.prototype.summary_render_one = function (story, data) {
+    var self = this;
+    var first = d3.select("#one");
+    first.selectAll("*").remove()
+
+    data.forEach(function (obj, i) {
+
+        if (obj.title == story) {
+            first.append("h2").text(obj.title).attr("class", "summary").attr("class", "summarytitle")
+            first.append("p").text("Flesch Score: " + obj.flesch_score).attr("class", "summary")
+            first.append("p").text("Total Words: " + obj.total_words).attr("class", "summary")
+            first.append("p").text("Sentence Count: " + obj.sentence_count).attr("class", "summary")
+            first.append("p").text("Syllable Count: " + obj.syllable_count).attr("class", "summary")
+            first.append("p").text("Complex Word Count: " + obj.complex_words).attr("class", "summary")
+
+        }
+    })
+
+}
+RadarChart.prototype.summary_render_two = function (story, data) {
+    var self = this;
+    var second = d3.select("#two");
+    second.selectAll("*").remove()
+    data.forEach(function (obj, i) {
+
+        if (obj.title == story) {
+            second.append("h2").text(obj.title).attr("class", "summary").attr("class", "summarytitle")
+            second.append("p").text("Flesch Score: " + obj.flesch_score).attr("class", "summary")
+            second.append("p").text("Total Words: " + obj.total_words).attr("class", "summary")
+            second.append("p").text("Sentence Count: " + obj.sentence_count).attr("class", "summary")
+            second.append("p").text("Syllable Count: " + obj.syllable_count).attr("class", "summary")
+            second.append("p").text("Complex Word Count: " + obj.complex_words).attr("class", "summary")
+        }
+    })
+}
+
+
 

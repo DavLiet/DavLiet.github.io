@@ -11,18 +11,41 @@ h1,h2{
 
 #intro>p,#intro>li,#intro>ol,#intro>h1{
     font-family: Arial, Helvetica, sans-serif;
-    color:#f9f9f9;
+    color:black;
 }
 
 #intro{
-    background-color: #57606f;
+    background-color: #f9f9f9;
+    /*citation: https://www.w3schools.com/howto/howto_css_cards.asp*/
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    /*End Citation*/
     padding: 18px;
+    width:1500px;
+    
 
 }
 
+#title{
+    text-align: left;
+    font-size: 48px;
+    padding-left:10px;
+    padding-top:20px;
+    padding-bottom:20px;
+    background-color: #2ecc71;
+}
+#choose{
+    font-size: 28px;
+    text-align: left;
+    padding-left:10px;
+    padding-top:20px;
+    padding-bottom:20px;
+    background-color:#2ecc71;
+    color:#f9f9f9;
+}
+
+
 body{
-    background-color:#f9f9f9;
+    background-color:white;
 }
 
 /** Style Buttons **/
@@ -34,7 +57,8 @@ body{
 }
 
 .selected{
-    background-color:#e67e22;
+    /* background-color:#e67e22; */
+    background-color: #2ecc71;
     color: #f9f9f9;
     border-color:#74b9ff;
 }
@@ -52,14 +76,16 @@ body{
 
 #chart-one{
     text-align: center;
-
+background-color: white;
 }
 
 .titleLabel{
     font-family: Arial, Helvetica, sans-serif;
     font-size:15px;
+
 }
 
+/*Citation: From Electoral Votes Assignment*/
 .d3-tip{
     padding-left: 10px;
     padding-right: 10px;
@@ -71,6 +97,7 @@ body{
     border-radius: 10px;
     pointer-events: none;
 }
+/*End Citation*/
 
 .tooltip-title{
     color:blue;
@@ -78,9 +105,58 @@ body{
 
 .metadata{
     font-family: Arial, Helvetica, sans-serif;
-
 }
 
 #intro{
-    margin: auto 0;
+    margin: 0 auto;
 }
+
+#summary{
+    margin: 0 auto;
+    display:grid;
+    grid-template-columns: 1fr 20px 1fr;
+    width:750px;
+}
+#one,#two{
+    /*Citation: https://www.w3schools.com/howto/howto_css_cards.asp*/
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  /*End Citation*/
+  padding:10px;
+  background-color:#f9f9f9;
+
+}
+
+#one{
+    grid-column: 1;
+}
+#two{
+    grid-column: 3;
+}
+/*Citation: https://www.w3schools.com/howto/howto_css_cards.asp*/
+#one:hover,#two:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  /*End Citation*/
+
+  .summary{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left:18px;
+    padding-right:18px;
+
+  }
+
+  #all-stories{
+      padding:18px;
+      width:1500px;
+      margin: 0 auto;
+      text-align: center;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+  .summarytitle{
+      padding:18px;
+      background-color: #2ecc71;
+      color:#f9f9f9;
+  }
