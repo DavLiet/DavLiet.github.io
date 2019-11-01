@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meet David Lie-Tjauw</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Latest compiled and minified CSS -->
+
+</head>
+
+<body>
+    <div class="navbar">
+        <div>
+            <a class="message" href="index.html">About</a>
+        </div>
+        <div>
+            <a class="message" href="experience.html">Experience</a>
+        </div>
+        <div>
+            <a class="message" href="projects.html">Projects</a>
+        </div>
+
+
+    </div>
+    <br />
+    <div class="projects-container">
+        <div>
+            <h1>GeoXplorer</h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/YMUT6HvRM9Q" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <p style="background-color:yellow;"><b><u>Skills</u>: Unity, C#, ARFoundation</b></p>
+            <a class="proj-link" href="https://www.dropbox.com/s/22s9l2pblzr64vn/geoxplorer_mobile.zip?dl=0">Download
+                Unity
+                Project</a>
+            <br />
+            <a class="proj-link" href="https://github.com/DavLiet/GeoXplorer">View Unity Scripts on
+                Github</a>
+            <br />
+            <a class="proj-link" href="getgeoxplorer.app">Download GeoXplorer from App Store</a>
+            <p>GeoXplorer is a mobile app that enables users to “Xplore” a wide range of 3D models from Earth,
+                the Moon, and Mars using Augmented Reality. </p>
+
+            <p>GeoXplorer features a catalogue of different 3D models you
+                can pick to view in AR.These models are split into four categories: Martian Models, Crystal Lattice,
+                Digital Elevation Models, and Hand Samples. Once you select and download a model, you can point and tap
+                anywhere on the world around you to view the 3D model in AR.</p>
+
+            <p>If the model is too small or maybe not oriented correctly, GeoXplorer offers controls that allow you to
+                manipulate the size, elevation, and rotation of the model.</p>
+
+            <p>GeoXplorer is currently only available for iOS. Android support coming soon!</p>
+
+
+        </div>
+        <br />
+
+        -------------------
+        <br />
+        <div>
+            <h1>GeoBase</h1>
+            <div>
+                <img class="geobase_img" src="geobase_1.png" />
+                <img class="geobase_img" src="geobase_2.png" />
+            </div>
+            <p style="background-color:yellow;"><b><u>Skills</u>: JavaScript, React,React Router, Axios, FormData,
+                    three.js, Heroku</b></p>
+
+            <a class="proj-link" href="https://geobase-wustl.herokuapp.com/">Visit GeoBase</a>
+            <br />
+            <a class="proj-link" href="https://github.com/DavLiet/GeoBase">Github</a>
+            <p>GeoBase is a React app that planetary scientists use to browse, download, and upload 3D models. Using
+                three.js, GeoBase loads high-fidelity 3D models directly into your browser window, allowing you to drag
+                and rotate the models to examine them. Each 3D model is around 30MB, which presented a considerable
+                challenge when trying to view models in your browser without crashing anything. Because JavaScript is
+                single-threaded, I employed the use of Web Workers to load the 3D models on a background thread so the
+                UI doesn't freeze. Uploading large 3D models also presented another challenge as file uploads would
+                often become corrupted. I solved this issue by using the <a
+                    href="https://nodejs.org/api/fs.html#fs_file_system">NodeJS File system API ('fs') </a>to break up
+                big
+                files into smaller packets using <a href="https://nodejs.org/api/stream.html#stream_stream">streams</a>.
+            </p>
+
+        </div>
+        <br />
+
+        -------------------
+        <br />
+        <div>
+            <h1>Backend API for Fossett Lab </h1>
+            <p style="background-color:yellow;"><b><u>Skills</u>: JavaScript, Node.js, Express, Azure Blob Storage,
+                    Formidable,
+                    Node.js filesystem ('fs')</b></p>
+            <a class="proj-link" href="https://github.com/DavLiet/GeoBase_API">Github</a>
+
+
+            <p>The Fossett Lab for Virtual Planetary Exploration has nearly one terrabyte of high-fidelity 3D models of
+                Earth and Martian terrain. I built out the entire backend infrastructure for the Lab, moving all 3D
+                models to Azure Blob Storage. I then created a REST API that allows us to POST and GET 3D models from
+                the Fossett Lab's different products: GeoXplorer (for iOS and Hololens) and GeoBase. This swiss-army
+                knife approach allows the Lab to scale its operations and not have to worry about serving models
+                locally.</p>
+
+            <p>This is a Node.js API that uses express to handle routing, azure-storage to interface with Azure's Blob
+                Storage service, streams to reliably move files, and formidable to handle folder uploads to Azure.</p>
+
+            <p>3D models stored in Azure Storage are organized into different folders, depending on the type of model
+                being uploaded. Primarily, we have endpoints for each type of category: Digital Elevation Models,
+                Martian Terrain (Hi-Rise) models, hand samples, and crystal lattice structures. </p>
+        </div>
+        <br />
+
+        -------------------
+        <br />
+        <div>
+            <h1>Mad Dash</h1>
+            <img style="width:50%; height:auto;" src="mad_dash_shot.png" />
+            <p style="background-color:yellow;"><b><u>Skills</u>: Unity, C#, NavMesh AI Agents</b></p>
+            <a href="unity_game/safehouse.html">Play Game</a>
+            <br />
+            <a href="https://drive.google.com/file/d/1xiNgicpjnO0X1ljPHEQufXwPfwfVwrgT/view?usp=sharing">Download Unity
+                Project</a>
+            <p>Mad Dash is a Unity-made cops and robbers style game. The player assumes the role of a robber trying to
+                avoid the cops while making their way to the safehouse. Along the way, you can collect powerups (such as
+                explosive mines, bullets, invisibility cloak, and teleportation) to aid in your escape. The police in
+                this game are Unity NavMesh AI Agents that will intelligentially start chasing you if they spot you. Mad
+                Dash is composed of 3 levels that you can unlock by getting to the safehouse.</p>
+
+        </div>
+        <br />
+
+        -------------------
+        <br />
+        <div>
+            <h1>NoteHero</h1>
+            <p style="background-color:yellow;"><b><u>Skills</u>: JavaScript, Google Cloud Vision API,
+                    React, Firebase Database, Firebase Authentication</b></p>
+            <a href="https://github.com/DavLiet/note-hero">Github</a>
+            <br />
+            <a href="https://wustlcse204.github.io/09-final-project-david_lie-tjauw/">Visit Note Hero</a>
+            <p>NoteHero is a React app that converts pictures of your class notes into editable text notes. Simply take
+                upload a picture of any notes you have and NoteHero will use the Google Cloud Vision API to parse any
+                observable text, pasting it in a textbox for you to edit. When you're satisfied, you can then save the
+                notes to your account and view them whenever you log back in.</p>
+
+        </div>
+        <br />
+
+        -------------------
+        <br />
+        <div>
+            <h1>Capsistant</h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/I_4uxJaeTBo" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+            <p style="background-color:yellow;"><b><u>Skills</u>: Python, Google Assistant SDK, Google Cloud Vision API,
+                    Raspberry Pi</b></p>
+            <a href="https://github.com/StephenOrJames/ioticians-capsistant">Github</a>
+
+            <p>The "Capsistant" is a smart hat equipped with a Raspberry Pi that uses a camera, microphone, and Google
+                Assistant SDK to tell users what objects are in front of them using the Google Cloud Vision API.
+
+                Simply ask "What am I looking at?" to trigger the Capsistant!</p>
+        </div>
+        <br />
+
+        -------------------
+        <br />
+        <div>
+            <h1>Jumble</h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/TIJUJrhfe-A" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+            <p style="background-color:yellow;"><b><u>Skills</u>: Swift, Firebase, XCode</b></p>
+            <a href="https://github.com/DavLiet/JumbleApp">Github</a>
+
+            <p>Jumble is an iOS app that provides on-demand labor solutions by matching employers with temporary workers
+                in an area.
+                Users of
+
+                Jumble can use their profile to either post jobs that they want done or search through existing job
+                postings for work. Users can customize their profiles with self-identifying information (like profile
+                pictures and skill descriptions) in order to give
+                job posters or temporary workers a well-informed
+                picture of who they would be working with. From tutoring to shoveling snow,
+                Jumble seeks to connect people with convenient side jobs.
+            </p>
+
+            <p>Engineering-wise, Jumble uses Firebase's real-time database and authentication API to store/update data
+                and allow users to create accounts and sign-on.</p>
+        </div>
+        <br />
+
+        -------------------
+        <br />
+        <div>
+            <h1>Visualizing gentrification in NYC</h1>
+            <img src="visual.png" />
+            <p style="background-color:yellow;"><b><u>Skills</u>: JavaScript, d3.js, GeoJSON</b></p>
+            <a href="http://www.david-lietjauw.com/final_project_457/">See Visualization</a>
+            <br />
+            <a href="https://github.com/DavLiet/final_project_457">Github</a>
+            <p>Using the d3.js visualization libray, me and two friends made a visualization tool that educates people
+                about the effects of gentrification in NYC over time. We focused on identifying 6 key factors that lead
+                to gentrification: Housing supply, Commute time, median household income, median rent, population, and
+                racial diversity index. We use these factors to calculate a gentrification 'score' that influences the
+                color shades of each subborough in the visualization. Darker subboroughs are more gentrified compared to
+                lighter ones.</p>
+
+            <p>In addition to seeing the effects of gentrification over time, users can compare 2 subboroughs at a time
+                and select specific attributes to analyze. Doing this creates side-by-side bar charts that displays
+                fine-grained data from past years.</p>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
