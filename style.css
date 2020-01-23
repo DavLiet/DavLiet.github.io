@@ -189,6 +189,9 @@ span{
     #profile_col{
         margin-right: 0px;
     }
+    .sidenav{
+        width: 50px; /* Set the width of the sidebar */
+    }
  }
 
 
