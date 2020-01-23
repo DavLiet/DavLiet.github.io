@@ -170,4 +170,7 @@ span{
     #about_page{
         display:block;
     }
+    #profile_col{
+        margin-right: 0px;
+    }
  }
