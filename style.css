@@ -98,14 +98,9 @@ html,body{
  
 }
 
-#profile_col{
-   text-align: center;
 
-}
 
-.message{
-    text-align: center;
-}
+
 
 .navbar{
     display:inline-grid;
