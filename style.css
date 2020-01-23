@@ -157,7 +157,7 @@ span{
 
 
 /* Media Queries */
-@media only screen and (min-width: 1268px) {
+@media only screen and (min-width: 1068px) {
    /* tablets and desktop */
 }
 
@@ -165,7 +165,7 @@ span{
     margin-right: 50px;
 }
 
-@media only screen and (max-width: 1267px) {
+@media only screen and (max-width: 1067px) {
  /* phones */
     #about_page{
         display:block;
