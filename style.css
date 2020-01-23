@@ -84,6 +84,7 @@ p{
 
 html,body{
     /* height:100%; */
+    /* background-color: #2d3436; */
 }
 
 
@@ -153,3 +154,20 @@ span{
     color:#f1c40f;
     text-decoration: underline;
 }
+
+
+/* Media Queries */
+@media only screen and (min-width: 1268px) {
+   /* tablets and desktop */
+}
+
+#profile_col{
+    margin-right: 50px;
+}
+
+@media only screen and (max-width: 1267px) {
+ /* phones */
+    #about_page{
+        display:block;
+    }
+ }
