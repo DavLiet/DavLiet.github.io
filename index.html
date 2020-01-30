@@ -26,9 +26,20 @@
         <a href="https://medium.com/@davidfromkansas"><img src="logos/Monogram.svg" /></a>
         <a href="mailto:davlietjauw@gmail.com"><img src="logos/gmail.svg" /></a>
         <a href="https://davidfromkansas.substack.com/"><img src="logos/substack.png" /></a>
-
-
+        <a id="dark_mode" href=""><img id="battery_logo" src="logos/light_battery.png" /></a>
     </div>
+    <script>
+        document.getElementById("battery_logo").onclick = function (el) {
+            if (this.src.includes("dark_battery.png")) {
+                this.src.replace("dark_battery", "poop");
+                console.log(this.src);
+            }
+            else {
+                console.log("OTHER");
+            }
+        }
+
+    </script>
     <div class="navbar">
         <div>
             <a class="message" href="index.html" style="text-decoration: underline; color:#d63031;">About</a>
